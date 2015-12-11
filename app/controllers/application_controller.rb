@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
     session[:return_to] = request.fullpath
     redirect_to login_path, alert: 'You must be logged in!' unless session[:user_id].present?
   end
+  
+  def current_user
+    User.find(session[:user_id]) if session[:user_id]
+  end
 end

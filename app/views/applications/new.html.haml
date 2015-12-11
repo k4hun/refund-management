@@ -1,2 +1,6 @@
-%h1 Applications#new
-%p Find me in app/views/applications/new.html.haml
+%h2 Apply for refund
+
+= simple_form_for @application do |f|
+  = f.association :category, as: :select, collection: Category.all, selected: 1
+  = f.input :description
+  = f.submit
