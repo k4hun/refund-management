@@ -4,3 +4,5 @@
   = f.association :category, as: :select, collection: Category.all, selected: 1
   = f.input :description
   = f.submit
+  
+%p= link_to 'Check status of applications', applications_path

@@ -7,4 +7,12 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+    - if current_user.present?
+      = "Signed as: #{current_user.email} | "
+      = link_to 'Log out', logout_path, method: :delete
+    - else
+      = link_to 'Log in', login_path
+      = link_to 'Register', register_path
+    = flash[:error]
+    = flash[:notice]
     = yield

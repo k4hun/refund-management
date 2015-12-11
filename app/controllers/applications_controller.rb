@@ -3,6 +3,7 @@ class ApplicationsController < ApplicationController
   
   def index
     @applications = Application.all
+    @user_apps = current_user.applications.all
   end
 
   def new

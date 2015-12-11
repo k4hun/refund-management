@@ -1,16 +1,19 @@
-%h2 List of all applications
-
+%h2 List of applications
 %table
-  %tr
-    %th User
-    %th Refund Category
-    %th Approved
-    %th Actions
-  - @applications.each do |app|
-    %tr
-      %td= app.user.email
-      %td= app.category.name
-      %td= app.approved
-      %td
-        = link_to 'Show'
-        = link_to 'Approve'
+	- if is_admin?
+		%tr
+			%th User
+			%th Refund Category
+			%th Approved
+			%th Actions
+		- @applications.each do |app|
+			%tr
+				%td= app.user.email
+				%td= app.category.name
+				%td= app.approved
+				%td
+					= link_to 'Show'
+					= link_to 'Approve'
+	- else 
+		= render 'user_apps'
+= link_to 'Apply for refund', new_application_path

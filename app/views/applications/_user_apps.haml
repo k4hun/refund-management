@@ -1,0 +1,11 @@
+%tr
+	%th Refund Category
+	%th Approved
+	%th Actions
+- @user_apps.each do |app|
+	%tr
+		%td= app.category.name
+		%td= app.approved
+		%td
+			= link_to 'Show'
+			= link_to 'Approve'
