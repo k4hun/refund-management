@@ -3,8 +3,8 @@
 	- if is_admin?
 		%tr
 			%th User
-			%th Refund Category
-			%th Approved
+			%th Category
+			%th Status
 			%th Actions
 		- @applications.each do |app|
 			%tr
@@ -13,7 +13,7 @@
 				%td= app.approved
 				%td
 					= link_to 'Show'
-					= link_to 'Approve'
+					= link_to 'Approve', approve_application_path(app), method: :post
 	- else 
 		= render 'user_apps'
-= link_to 'Apply for refund', new_application_path
+		= link_to 'Apply for refund', new_application_path

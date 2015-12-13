@@ -22,6 +22,13 @@ class ApplicationsController < ApplicationController
 
   def show
   end
+
+  def approve
+    Application.find(params[:id]).approve
+    redirect_to applications_path
+  end
+
+  private
   
   def app_params
     params.require(:application).permit(:category_id, :description)
