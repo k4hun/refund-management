@@ -10,7 +10,7 @@
 			%tr
 				%td= app.user.email
 				%td= app.category.present? ? app.category.name : 'Not yet defined'
-				%td= app.status.present? ? app.status : 'Pending'
+				%td= check_status(app)
 				%td
 					= link_to 'Review', edit_application_path(app)
 	- else 
