@@ -30,6 +30,7 @@ gem "haml-rails", "~> 0.9"
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'simple_form'
 gem 'faker'
+gem 'will_paginate', '~> 3.0.6'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
