@@ -29,8 +29,17 @@ categories = Category.all
 end
 users = User.all
 
+# Create pending applications
+15.times do
+	Application.create!(
+		description: Faker::Lorem.sentence,
+		user: users.sample,
+		refund_value: 1
+	)
+end
+
 # Create applications
-25.times do
+10.times do
 	Application.create!(
 		description: Faker::Lorem.sentence,
 		category: categories.sample,
