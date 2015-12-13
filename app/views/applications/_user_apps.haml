@@ -2,8 +2,10 @@
 	%th Description
 	%th Category
 	%th Status
+	%th Applied
 - @user_apps.each do |app|
 	%tr
 		%td= app.description
 		%td= app.category.present? ? app.category.name : 'Not yet defined'
 		%td= check_status(app)
+		%td= app.created_at.to_date

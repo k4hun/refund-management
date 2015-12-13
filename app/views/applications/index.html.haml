@@ -5,12 +5,14 @@
 			%th User
 			%th Category
 			%th Status
+			%th Applied
 			%th Actions
 		- @applications.each do |app|
 			%tr
 				%td= app.user.email
 				%td= app.category.present? ? app.category.name : 'Not yet defined'
 				%td= check_status(app)
+				%td= app.created_at.to_date
 				%td
 					= link_to 'Review', edit_application_path(app)
 	- else 
