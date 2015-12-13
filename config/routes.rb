@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   resources :users, only: [:create]
   get '/register' => 'users#new', as: 'register'
-  resources :applications, only: [:index, :new, :create, :show]
+  resources :applications, only: [:index, :new, :create, :show] do
+    member do
+      post 'approve'
+    end
+  end
   
   get '/login' => 'session#new', as: 'login'
   delete '/logout' => 'session#destroy', as: 'logout'
