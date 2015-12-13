@@ -1,5 +1,7 @@
 class Application < ActiveRecord::Base
-	after_initialize :set_default_values
+	before_validation(on: :create) do
+    self.refund_value = 1
+  end
 
 	belongs_to :user
 	belongs_to :category
@@ -16,9 +18,5 @@ class Application < ActiveRecord::Base
 	def reject
 		self.status = 'rejected'
 		self.save
-	end
-
-	def set_default_values
-		self.refund_value = 1
 	end
 end
