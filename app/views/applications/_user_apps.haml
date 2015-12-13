@@ -5,5 +5,5 @@
 - @user_apps.each do |app|
 	%tr
 		%td= app.description
-		%td= app.category.name
+		%td= app.category.present? ? app.category.name : 'Not yet defined'
 		%td= app.approved

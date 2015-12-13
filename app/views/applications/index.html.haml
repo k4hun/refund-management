@@ -9,10 +9,10 @@
 		- @applications.each do |app|
 			%tr
 				%td= app.user.email
-				%td= app.category.name
+				%td= app.category.present? ? app.category.name : 'Not yet defined'
 				%td= app.approved
 				%td
-					= link_to 'Show'
+					= link_to 'Show', application_path(app)
 					= link_to 'Approve', approve_application_path(app), method: :post
 	- else 
 		= render 'user_apps'

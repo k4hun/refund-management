@@ -31,6 +31,6 @@ class ApplicationsController < ApplicationController
   private
   
   def app_params
-    params.require(:application).permit(:category_id, :description)
+    params.require(:application).permit(:description)
   end
 end
