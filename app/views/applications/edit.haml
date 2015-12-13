@@ -3,7 +3,8 @@
 		%h2.panel-title Review application
 	.panel-body
 
-		%p= "User #{@application.user.email} applied #{@application.created_at.to_date}"
+		%p= "User: #{@application.user.email}"
+		%p= "Applied: #{application_date(@application)}"
 		%p= "Description: #{@application.description}"
 
 		= simple_form_for @application do |f|
