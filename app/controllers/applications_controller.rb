@@ -3,7 +3,7 @@ class ApplicationsController < ApplicationController
   before_action :set_application, only: [:edit, :update, :approve, :reject]
   
   def index
-    @applications = Application.all
+    @applications = Application.paginate(page: params[:page])
     @user_apps = current_user.applications.all
   end
 

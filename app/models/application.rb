@@ -19,4 +19,6 @@ class Application < ActiveRecord::Base
 		self.status = 'rejected'
 		self.save
 	end
+
+	self.per_page = 15
 end

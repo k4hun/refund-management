@@ -18,3 +18,5 @@
 	- else 
 		= render 'user_apps'
 		= link_to 'Apply for refund', new_application_path, class: 'btn btn-default'
+
+= will_paginate @applications

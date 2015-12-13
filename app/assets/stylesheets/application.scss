@@ -33,3 +33,20 @@
 .panel {
 	margin-top: 20px;
 }
+
+.pagination {
+	display: block;
+	text-align: center;
+	a, em {
+		border: 1px solid #ddd;
+		padding: 8px;
+		&:hover {
+			background-color: #337ab7;
+			color: #fff;
+			text-decoration: none;
+		}
+	}
+	.current {
+		background: #ddd
+	}
+}
