@@ -1,7 +1,7 @@
 puts 'Start seed'
 
 REFUND_CATEGORIES = ['Health care', 'Education', 'Sport']
-STATUSES = [nil, 'approved', 'rejected']
+STATUSES = ['approved', 'rejected']
 
 Role.create(name: 'admin')
 Role.create(name: 'user')
