@@ -4,7 +4,7 @@
 	%th Status
 	%th Applied
 - @user_apps.each do |app|
-	%tr
+	%tr{ class: status_color(app)}
 		%td= app.description
 		%td= app.category.present? ? app.category.name : 'Not yet defined'
 		%td= check_status(app)

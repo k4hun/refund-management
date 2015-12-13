@@ -7,12 +7,20 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    - if current_user.present?
-      = "Signed as: #{current_user.email} | "
-      = link_to 'Log out', logout_path, method: :delete
-    - else
-      = link_to 'Log in', login_path
-      = link_to 'Register', register_path
-    = flash[:error]
-    = flash[:notice]
-    = yield
+    %header
+      %nav.navbar-default
+        .container-fluid
+          %ul.nav.navbar-nav
+            - if current_user.present?
+              %li
+                %a.navbar-brand= "Signed as: #{current_user.email}"
+              %li= link_to 'Log out', logout_path, method: :delete
+            - else
+              %li{ class: active?(login_path) }= link_to 'Log in', login_path
+              %li{ class: active?(register_path) }= link_to 'Register', register_path
+    .container
+      - if flash[:error].present?
+        .alert.alert-danger= flash[:error]
+      - if flash[:notice].present?
+        .alert.alert-success= flash[:notice] 
+      = yield

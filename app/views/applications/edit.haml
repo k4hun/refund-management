@@ -1,11 +1,15 @@
-%h2 Review application
+.panel.panel-default
+	.panel-heading 
+		%h2.panel-title Review application
+	.panel-body
 
-%p= "User #{@application.user.email} applied #{@application.created_at.to_date}"
-%p= "Description: #{@application.description}"
-= simple_form_for @application do |f|
-  = f.association :category, as: :select, collection: Category.all, selected: 1
-  = f.input :refund_value, label: 'Refund %', input_html: {value: '10'}
-  = f.button :submit, 'Approve'
+		%p= "User #{@application.user.email} applied #{@application.created_at.to_date}"
+		%p= "Description: #{@application.description}"
 
-= link_to 'Reject', reject_application_path(@application), method: :post
-= link_to 'Back to list', applications_path
+		= simple_form_for @application do |f|
+			= f.association :category, as: :select, collection: Category.all, selected: 1
+			= f.input :refund_value, label: 'Refund %', input_html: {value: '10'}
+			= f.button :submit, 'Approve', class: 'btn btn-success'
+
+			= link_to 'Reject', reject_application_path(@application), method: :post, class: 'btn btn-danger'
+			= link_to 'Back to list', applications_path, class: 'btn btn-default'

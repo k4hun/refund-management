@@ -16,3 +16,16 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+.form {
+	width: 300px;
+	display: inline-block;
+}
+
+.register {
+	padding: 40px;
+	width: 300px;
+	display: inline-block;
+	vertical-align: top;
+}

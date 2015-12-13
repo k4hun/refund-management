@@ -1,5 +1,5 @@
 %h2 List of applications
-%table
+%table.table.table-striped.table-hover
 	- if is_admin?
 		%tr
 			%th User
@@ -8,13 +8,13 @@
 			%th Applied
 			%th Actions
 		- @applications.each do |app|
-			%tr
+			%tr{ class: status_color(app)}
 				%td= app.user.email
 				%td= app.category.present? ? app.category.name : 'Not yet defined'
 				%td= check_status(app)
-				%td= app.created_at.to_date
+				%td= application_date(app)
 				%td
 					= link_to 'Review', edit_application_path(app)
 	- else 
 		= render 'user_apps'
-		= link_to 'Apply for refund', new_application_path
+		= link_to 'Apply for refund', new_application_path, class: 'btn btn-default'

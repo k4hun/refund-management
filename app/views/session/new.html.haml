@@ -1,9 +1,11 @@
 %h2 Log in 
-= simple_form_for :session, url: session_index_path, :method => :post do |f|
-  = f.input :email
-  = f.input :password
-  = f.submit
 
-%p
-  Doesn't have account? 
-  = link_to 'Register', register_path
+.form
+	= simple_form_for :session, url: session_index_path, :method => :post do |f|
+		= f.input :email
+		= f.input :password
+		= f.submit 'Log in', class: 'btn btn-default'
+
+.register
+	%p Doesn't have account? 
+	= link_to 'Register', register_path, class: 'btn btn-success'

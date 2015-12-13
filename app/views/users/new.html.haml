@@ -1,7 +1,12 @@
-%h2 Register new user
+%h2 Register
 
-= simple_form_for @user do |f|
-  = f.input :email
-  = f.input :password
-  = f.input :password_confirmation
-  = f.submit
+.form
+	= simple_form_for @user do |f|
+		= f.input :email
+		= f.input :password
+		= f.input :password_confirmation
+		= f.submit 'Register', class: 'btn btn-default'
+
+.register
+	%p Already has an account? 
+	= link_to 'Login', login_path, class: 'btn btn-success'
