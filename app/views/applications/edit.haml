@@ -1,0 +1,10 @@
+%h2 Review application
+
+%p= "User #{@application.user.email} applied #{@application.created_at.to_date}"
+%p= "Description: #{@application.description}"
+= simple_form_for @application do |f|
+  = f.association :category, as: :select, collection: Category.all, selected: 1
+  = f.input :refund_value, label: 'Refund %', input_html: {value: '10'}
+  = f.button :submit, 'Approve'
+
+=link_to 'Back to list', applications_path

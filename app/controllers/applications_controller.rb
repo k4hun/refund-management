@@ -1,5 +1,6 @@
 class ApplicationsController < ApplicationController
   before_action :authenticate_user
+  before_action :set_application, only: [:edit, :approve]
   
   def index
     @applications = Application.all
@@ -20,17 +21,34 @@ class ApplicationsController < ApplicationController
     end
   end
 
-  def show
+  def edit
+  end
+
+  def update
+    if @application.update(approve_params)
+      @application.approve
+      redirect_to applications_path, notice: 'Application approved'
+    else
+      render 'edit'
+    end    
   end
 
   def approve
-    Application.find(params[:id]).approve
+    @application.approve
     redirect_to applications_path
   end
 
   private
+
+  def set_application
+    @application = Application.find(params[:id])
+  end
   
   def app_params
     params.require(:application).permit(:description)
+  end
+
+  def approve_params
+    params.require(:application).permit(:category_id, :refund_value)
   end
 end

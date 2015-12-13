@@ -12,8 +12,7 @@
 				%td= app.category.present? ? app.category.name : 'Not yet defined'
 				%td= app.approved
 				%td
-					= link_to 'Show', application_path(app)
-					= link_to 'Approve', approve_application_path(app), method: :post
+					= link_to 'Review', edit_application_path(app)
 	- else 
 		= render 'user_apps'
 		= link_to 'Apply for refund', new_application_path
