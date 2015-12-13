@@ -7,4 +7,5 @@
   = f.input :refund_value, label: 'Refund %', input_html: {value: '10'}
   = f.button :submit, 'Approve'
 
-=link_to 'Back to list', applications_path
+= link_to 'Reject', reject_application_path(@application), method: :post
+= link_to 'Back to list', applications_path

@@ -1,6 +1,6 @@
 class ApplicationsController < ApplicationController
   before_action :authenticate_user
-  before_action :set_application, only: [:edit, :approve]
+  before_action :set_application, only: [:edit, :update, :approve, :reject]
   
   def index
     @applications = Application.all
@@ -35,7 +35,11 @@ class ApplicationsController < ApplicationController
 
   def approve
     @application.approve
-    redirect_to applications_path
+  end
+
+  def reject
+    @application.reject
+    redirect_to applications_path, notice: 'Application rejected'
   end
 
   private

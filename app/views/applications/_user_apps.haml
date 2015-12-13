@@ -6,4 +6,4 @@
 	%tr
 		%td= app.description
 		%td= app.category.present? ? app.category.name : 'Not yet defined'
-		%td= app.approved
+		%td= app.status.present? ? app.status : 'Pending'

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :applications, only: [:index, :new, :create, :edit, :update] do
     member do
       post 'approve'
+      post 'reject'
     end
   end
   
