@@ -43,8 +43,11 @@ group :development, :test do
   gem 'byebug'
     
   gem 'rspec-rails', '~> 3.0'
-  gem 'shoulda-matchers', require: false
   gem 'capybara'
+end
+
+group :test do
+  gem 'shoulda-matchers', require: false
 end
 
 group :development do
