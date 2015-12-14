@@ -1,12 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Role, type: :model do
-    subject do
-		Role.new(
-			name: "Foo"
-		)
-	end
-	
 	it { should respond_to :name }
 	it { should respond_to :users }
 	

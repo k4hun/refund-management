@@ -1,12 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Category, type: :model do
-    subject do
-		Category.new(
-			name: "Foo"
-		)
-	end
-	
 	it { should respond_to :name }
 	it { should respond_to :applications }
 	
