@@ -3,8 +3,8 @@ class ApplicationsController < ApplicationController
   before_action :set_application, only: [:edit, :update, :approve, :reject]
   
   def index
-    @applications = Application.paginate(page: params[:page])
-    @user_apps = current_user.applications.paginate(page: params[:page])
+    @applications = Application.paginate(page: params[:page]).order(created_at: 'DESC')
+    @user_apps = current_user.applications.paginate(page: params[:page]).order(created_at: 'DESC')
   end
 
   def new
