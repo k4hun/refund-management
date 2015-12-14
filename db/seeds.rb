@@ -45,8 +45,12 @@ end
 		category: categories.sample,
 		status: STATUSES.sample,
 		user: users.sample,
-		refund_value: [*1..100].sample
 	)
 end
+Application.all.each do |app|
+	app.refund_value = [*1..100].sample
+	app.save
+end
+
 
 puts 'Seed end'
