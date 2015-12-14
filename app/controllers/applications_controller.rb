@@ -4,7 +4,7 @@ class ApplicationsController < ApplicationController
   
   def index
     @applications = Application.paginate(page: params[:page])
-    @user_apps = current_user.applications.all
+    @user_apps = current_user.applications.paginate(page: params[:page])
   end
 
   def new

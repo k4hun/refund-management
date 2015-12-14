@@ -9,3 +9,5 @@
 		%td= app.category.present? ? app.category.name : 'Not yet defined'
 		%td= check_status(app)
 		%td= application_date(app)
+
+= will_paginate @user_apps
