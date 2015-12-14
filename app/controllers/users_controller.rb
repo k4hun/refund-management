@@ -15,6 +15,7 @@ class UsersController < ApplicationController
     @user.role = Role.find_by_name('user')
     if @user.save
       redirect_to root_path, notice: 'User created'
+      session[:user_id] = @user.id
     else
       render 'new'
     end
