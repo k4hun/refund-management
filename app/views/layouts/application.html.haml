@@ -19,8 +19,8 @@
               %li{ class: active?(login_path) }= link_to 'Log in', login_path
               %li{ class: active?(register_path) }= link_to 'Register', register_path
     .container
-      - if flash[:error].present?
-        .alert.alert-danger= flash[:error]
+      - if flash[:alert].present?
+        .alert.alert-danger= flash[:alert]
       - if flash[:notice].present?
         .alert.alert-success= flash[:notice] 
       = yield

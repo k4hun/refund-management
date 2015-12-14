@@ -1,7 +1,8 @@
 %h2 Apply for refund
 
-.form
-	= simple_form_for @application do |f|
-		= f.input :description, :input_html => { :rows => 5 }
-		= f.submit 'Apply', class: 'btn btn-success'
-		= link_to 'Check status of applications', applications_path, class: 'btn btn-default'
+= simple_form_for @application do |f|
+  = f.association :category, as: :select, collection: Category.all, selected: 1
+  = f.input :description
+  = f.submit
+  
+%p= link_to 'Check status ofgit dif  applications', applications_path
