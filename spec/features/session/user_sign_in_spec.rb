@@ -2,14 +2,8 @@ require 'rails_helper'
 
 RSpec.feature "User signs in", :type => :feature do
   
-  let(:role) { Role.create!(name: 'user') }
-  let(:user) { 
-    User.create!(
-      email: 'test@mail.com',
-      password: '1234',
-      role: role
-    )
-  }
+  let(:role) { FactoryGirl.create(:role) }
+  let(:user) { FactoryGirl.create(:user) }
   
   scenario 'with valid email and password' do
     visit login_path
