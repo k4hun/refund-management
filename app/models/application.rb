@@ -6,7 +6,7 @@ class Application < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :category
 	
-	validates :user, presence: true
+	validates :user, :description, presence: true
 	validates :description, length: { maximum: 500 }
 	validates :refund_value, inclusion: { in: 1..100, message: 'Must be between 1 and 100' }
 
