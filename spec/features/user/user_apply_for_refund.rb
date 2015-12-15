@@ -1,10 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "User apply for refund", :type => :feature do
-  
-  let(:role) { FactoryGirl.create(:role) }
-  let(:user) { FactoryGirl.create(:user) }
-  
+
   before { login }
   
   scenario 'with valid description' do
