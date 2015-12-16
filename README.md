@@ -25,7 +25,9 @@ Simple application for managing user applications for a refund for money spent o
 ### :information_source: Heroku
 -------------
 * [https://refund-management.herokuapp.com/](https://refund-management.herokuapp.com/)
-* admin login: admin@mail.com 
-	pass: 123456
+
+* admin login: admin@mail.com
+* pass: 123456
+
 * user login: login as admin and pick any of emails
-    pass: 123456
+* pass: 123456
