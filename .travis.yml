@@ -3,3 +3,7 @@ rvm:
   - 2.2.3
 addons:
   postgresql: '9.3'
+script:
+  RAILS_ENV=test bundle exec rake db:migrate
+before_install: 
+  gem install bundler --pre
