@@ -18,3 +18,6 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+every '0 12 1 * *' do
+	runner "MonthlyReport.report.deliver_now"
+end
