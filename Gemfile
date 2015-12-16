@@ -47,6 +47,11 @@ group :development, :test do
   gem 'factory_girl_rails'
 end
 
+group :production do
+  gem 'rails_12factor', '~> 0.0.3'
+  gem 'pg'
+end
+
 group :test do
   gem 'shoulda-matchers', require: false
 end
