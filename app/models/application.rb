@@ -21,4 +21,6 @@ class Application < ActiveRecord::Base
 	end
 
 	self.per_page = 15
+	
+	scope :approved, -> { where(status: 'approved') }
 end
