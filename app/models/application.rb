@@ -23,4 +23,5 @@ class Application < ActiveRecord::Base
 	self.per_page = 15
 	
 	scope :approved, -> { where(status: 'approved') }
+	scope :from_last_month, -> { where('created_at > ?', 1.month.ago) }
 end
