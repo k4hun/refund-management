@@ -1,0 +1,12 @@
+%h2 Check out approved applications from last month!
+%p= "There was #{pluralize(@approved_from_last_month.count, 'application')} approved."
+%br
+- if @users_with_approved.any?
+  - @users_with_approved.each do |user|
+    %h3= "#{user.email} has #{pluralize(user.applications.approved.count, 'application')}:"
+    - user.applications.approved.each do |app|
+      %p= "Category: #{app.category.name} with #{app.refund_value}% refund"
+      %p= "#{app.description}"
+      %p= "Applied: #{app.created_at.to_date}"
+      %br
+    %hr

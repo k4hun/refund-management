@@ -1,0 +1,17 @@
+Check out approved applications from last month!
+
+There was <%= pluralize(@approved_from_last_month.count, 'application') %> approved.
+
+<% if @users_with_approved.any? %>
+  <% @users_with_approved.each do |user| %>
+    <%= "#{user.email} has #{pluralize(user.applications.approved.count, 'application')}:" %>
+    <%- user.applications.approved.each do |app| %>
+      <%= "Category: #{app.category.name} with #{app.refund_value} % refund" %>
+      <%= app.description %>
+      <%= "Applied: #{app.created_at.to_date}" %>
+      
+    <% end %>
+==============================================================
+  <% end %>
+<% end %>
+
