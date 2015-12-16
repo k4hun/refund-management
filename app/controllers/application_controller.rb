@@ -5,8 +5,11 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   
   def authenticate_user
-    session[:return_to] = request.fullpath
     redirect_to login_path, alert: 'You must be logged in!' unless session[:user_id].present?
+  end
+
+  def authenticate_admin
+    redirect_to root_path, alert: 'For admin only!' unless current_user.role.name == 'admin'
   end
   
   def current_user

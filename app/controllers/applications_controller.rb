@@ -1,5 +1,6 @@
 class ApplicationsController < ApplicationController
   before_action :authenticate_user
+  before_action :authenticate_admin, only: [:edit, :update, :approve, :reject]
   before_action :set_application, only: [:edit, :update, :approve, :reject]
   
   def index
