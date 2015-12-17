@@ -12,7 +12,7 @@ Simple application for managing user applications for a refund for money spent o
 | Name |  Version |
 | :--: | :---: |
 | [Ruby](https://www.ruby-lang.org) | 2.2.3 |
-| [Ruby on Rails](http://www.rubyonrails.org/) | 4.2.4 |
+| [Ruby on Rails](http://www.rubyonrails.org/) | 4.2.5 |
 
 ### :book: Setup
 -------------
