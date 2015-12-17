@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe ApplicationsController, type: :controller do
   
   let(:role) { FactoryGirl.create(:role) }
-  let(:user) { FactoryGirl.create(:user) }
+  let(:user) { FactoryGirl.create(:admin) }
   let(:app) { FactoryGirl.create(:application) }
 
   before { login(user) }
