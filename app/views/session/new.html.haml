@@ -8,4 +8,5 @@
 
 .register
 	%p Doesn't have account? 
-	= link_to 'Register', register_path, class: 'btn btn-success'
+	%p= link_to 'Register', register_path, class: 'btn btn-success'
+	%p= link_to 'Sign in with Facebook', '/auth/facebook', class: 'btn btn-info'

@@ -12,6 +12,14 @@ class SessionController < ApplicationController
       redirect_to login_path, alert: 'Wrong user name or password!'
     end
   end
+  
+  def facebook
+    auth = request.env["omniauth.auth"]
+    user = User.where(:provider => auth['provider'], 
+                      :uid => auth['uid']).first || User.create_with_omniauth(auth)
+    session[:user_id] = user.id
+    redirect_to root_url, :notice => "Signed in!"
+  end
 
   def destroy
     reset_session
