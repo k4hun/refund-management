@@ -31,7 +31,9 @@ gem 'simple_form'
 gem 'faker'
 gem 'will_paginate', '~> 3.0.6'
 gem 'whenever', :require => false
+
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

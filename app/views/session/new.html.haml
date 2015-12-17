@@ -7,6 +7,7 @@
 		= f.submit 'Log in', class: 'btn btn-default'
 
 .register
-	%p Doesn't have account? 
+	%h3 Doesn't have account? 
 	%p= link_to 'Register', register_path, class: 'btn btn-success'
 	%p= link_to 'Sign in with Facebook', '/auth/facebook', class: 'btn btn-info'
+	%p= link_to 'Sign in with Twitter', '/auth/twitter', class: 'btn btn-info'

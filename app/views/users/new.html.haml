@@ -8,6 +8,7 @@
 		= f.submit 'Sign up', class: 'btn btn-default'
 
 .register
-	%p Already has an account? 
+	%h3 Already has an account? 
 	%p= link_to 'Login', login_path, class: 'btn btn-success'
 	%p= link_to 'Sign in with Facebook', '/auth/facebook', class: 'btn btn-info'
+	%p= link_to 'Sign in with Twitter', '/auth/twitter', class: 'btn btn-info'

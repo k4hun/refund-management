@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/login' => 'session#new', as: 'login'
   delete '/logout' => 'session#destroy', as: 'logout'
   resources :session, only: [:create]
-  get '/auth/:provider/callback' => 'session#facebook'
+  get '/auth/:provider/callback' => 'session#social'
   
   root 'applications#index'
   
